@@ -1,0 +1,122 @@
+/* DemoGame.css - Modern, clean styles for the demo game UI */
+
+.demo-game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.demo-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  color: #222;
+}
+
+.demo-timer {
+  font-size: 1.2rem;
+  color: #4f8cff;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.demo-cards-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  width: 100%;
+  max-width: 420px;
+}
+
+.demo-card-row {
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 1px 8px 0 rgba(80,120,200,0.07);
+  margin-bottom: 1.1rem;
+  padding: 0.7rem 1.1rem;
+  gap: 1.1rem;
+}
+
+.demo-card-row img {
+  border-radius: 7px;
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  background: #e3eafc;
+}
+
+.demo-card-info {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.demo-place-btn {
+  background: #4f8cff;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 1px 6px 0 rgba(80,120,200,0.08);
+}
+
+.demo-place-btn:disabled {
+  background: #b6c6e3;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.demo-place-btn:hover:not(:disabled) {
+  background: #2563eb;
+  transform: translateY(-2px) scale(1.03);
+}
+
+.demo-mystery-section {
+  margin-top: 1.5rem;
+  background: #fffbe6;
+  border: 1.2px solid #ffe58f;
+  border-radius: 13px;
+  padding: 1.1rem 1.2rem 1.1rem 1.2rem;
+  box-shadow: 0 1px 8px 0 rgba(200, 180, 80, 0.09);
+  text-align: center;
+  max-width: 350px;
+}
+
+.demo-mystery-section img {
+  border-radius: 10px;
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 0.7rem;
+}
+
+.demo-mystery-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #b59f3b;
+  margin-bottom: 0.5rem;
+}
+
+.demo-mystery-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.3rem;
+}
+
+.demo-mystery-desc {
+  font-size: 0.98rem;
+  color: #7c6f29;
+}

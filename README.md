@@ -1,45 +1,91 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/ArqHNgsV)
-# Exam #N: "Exam Title"
-## Student: s123456 LASTNAME FIRSTNAME 
+# Exam #1: "Stuff Happens"
+## Student: [Your Student ID] [YOUR NAME]
 
-## React Client Application Routes
+---
 
-- Route `/`: page content and purpose
-- Route `/something/:param`: page content and purpose, param specification
-- ...
+## 1. Server-side
 
-## API Server
+### HTTP APIs
 
-- POST `/api/something`
-  - request parameters and request body content
-  - response body content
-- GET `/api/something`
-  - request parameters
-  - response body content
-- POST `/api/something`
-  - request parameters and request body content
-  - response body content
-- ...
+- `POST /api/login`  
+  - Body: `{ username, password }`  
+  - Logs in a user and starts a session.
 
-## Database Tables
+- `POST /api/logout`  
+  - Logs out the current user and destroys the session.
 
-- Table `users` - contains xx yy zz
-- Table `something` - contains ww qq ss
-- ...
+- `POST /api/game/start`  
+  - Starts a new game for the logged-in user and returns 3 initial random cards.
 
-## Main React Components
+- `POST /api/game/next`  
+  - Body: `{ used: [cardIds] }`  
+  - Returns a new random card not among the provided IDs.
 
-- `ListOfSomething` (in `List.js`): component purpose and main functionality
-- `GreatButton` (in `GreatButton.js`): component purpose and main functionality
-- ...
+- `POST /api/game/guess`  
+  - Body: `{ game_id, card_id, round_number, won, gameOver, outcome }`  
+  - Saves the result of a guess for a card in a round.
 
-(only _main_ components, minor ones may be skipped)
+- `PUT /api/game/:id/end`  
+  - Body: `{ outcome }`  
+  - Ends a game and sets its outcome (`win` or `lose`).
 
-## Screenshot
+- `GET /api/profile`  
+  - Returns the logged-in user's profile and game history.
 
-![Screenshot](./img/screenshot.jpg)
+- `GET /api/cards`  
+  - Returns all cards (for admin/testing).
 
-## Users Credentials
+### Database Tables
 
-- username, password (plus any other requested info)
-- username, password (plus any other requested info)
+- `Users` — Stores user accounts and login info.
+- `Cards` — Master list of all possible cards (name, image, bad luck index, theme).
+- `Games` — Metadata for each played game (user, start/end time, outcome).
+- `GameCards` — All cards used in each game, with round number and result (won, missed, initial).
+
+---
+
+## 2. Client-side
+
+### Routes
+
+- `/login` — Login page for user authentication.
+- `/game` — Main game interface for playing.
+- `/history` — Game history for the logged-in user.
+- `/` — Redirects to login or game depending on authentication.
+
+### Main React Components
+
+- `App.jsx` — Application root and routing.
+- `LoginForm.jsx` / `ModernLoginForm.jsx` — User login form.
+- `Game.jsx` — Main game logic and UI.
+- `GameHistory.jsx` — Displays game history and past results.
+- `DemoGame.jsx` — Demo version for anonymous users.
+
+---
+
+## 3. Overall
+
+### Screenshots
+
+- Game History page:  
+  ![Game History](./screenshots/Gamehistory.jpg)
+
+- During a game:  
+  ![During Game](./screenshots/duringgame.jpg)
+
+### User Credentials
+
+- Username: `webapplication`  |  Password: `137800`
+- Username: `fuvio`           |  Password: `politecnico25`
+
+---
+
+**Note:**  
+- The app is designed for desktop browsers.
+- To start:  
+  1. `cd server && npm install && nodemon index.mjs`  
+  2. `cd client && npm install && npm run dev`
+- Demo accounts for testing:  
+  - Username: `student1` | Password: `pass123`  
+  - Username: `testuser` | Password: `abc123`

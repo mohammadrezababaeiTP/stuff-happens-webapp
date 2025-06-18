@@ -1,0 +1,169 @@
+/* Game.css - Modern, clean styles for the main game UI */
+
+.game-container {
+  padding: 2rem 1.5rem;
+  background: #f8fafd;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(80, 110, 180, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-timer {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #4f8cff;
+  background: #e3eafc;
+  padding: 0.4rem 1.2rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cards-row {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.game-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(80, 110, 180, 0.10);
+  padding: 1rem 0.8rem;
+  min-width: 120px;
+  max-width: 140px;
+  text-align: center;
+  transition: transform 0.15s;
+}
+.game-card:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 6px 18px rgba(80, 110, 180, 0.13);
+}
+
+.game-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.card-subtitle {
+  font-size: 0.92rem;
+  color: #6c757d;
+}
+
+.confirm-btn {
+  background: linear-gradient(90deg, #4f8cff 60%, #38e6b0 100%);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 2.2rem;
+  font-size: 1.08rem;
+  margin-top: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(80, 110, 180, 0.10);
+  transition: background 0.2s, transform 0.1s;
+}
+.confirm-btn:hover {
+  background: linear-gradient(90deg, #3578e5 60%, #2edba0 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.mystery-section {
+  padding: 1.2rem 1rem;
+  background: #f4f8ff;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(80, 110, 180, 0.07);
+  text-align: center;
+  width: 100%;
+  max-width: 340px;
+}
+
+.mystery-section img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.7rem;
+}
+
+.mystery-title {
+  font-weight: 700;
+  font-size: 1.08rem;
+  margin-bottom: 0.3rem;
+}
+
+.mystery-desc {
+  font-size: 0.97rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.result-banner {
+  margin-top: 1.5rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: 10px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  text-align: center;
+}
+.result-banner.win {
+  background: #e6fbe6;
+  color: #1b8c1b;
+  border: 1px solid #b6eab6;
+}
+.result-banner.lose {
+  background: #ffeaea;
+  color: #d12c2c;
+  border: 1px solid #f7bcbc;
+}
+
+.game-chances {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #e74c3c;
+  background: #fdecec;
+  padding: 0.3rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.animated-result {
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 700px) {
+  .game-container {
+    padding: 1.2rem 0.3rem;
+    max-width: 98vw;
+  }
+  .cards-row {
+    gap: 0.6rem;
+  }
+  .mystery-section {
+    max-width: 98vw;
+    padding: 0.7rem 0.3rem;
+  }
+}
