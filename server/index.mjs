@@ -250,7 +250,7 @@ app.get('/api/profile', (req, res) => {
     res.status(500).json({ error: 'Failed to fetch profile data' });
   }
 });
-// Just starts the server//
+// Just starts the server
 app.listen(port, () => {
   console.log(`✅ Server listening at http://localhost:${port}`);
 });
