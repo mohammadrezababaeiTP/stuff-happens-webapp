@@ -18,7 +18,7 @@ passport.serializeUser((user, cb) => {
   cb(null, user.id);
 });
 
-// Retrieve user info from session by ID
+// Retrieve user information from session by ID
 passport.deserializeUser((id, cb) => {
   const user = getUserById(id); // Use helper instead of inline query
   if (!user) return cb(null, false);

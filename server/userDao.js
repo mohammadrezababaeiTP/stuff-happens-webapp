@@ -10,7 +10,7 @@ export function getUser(username) {
 }
 
 // Checks if username and password are right
-// If ok, returns user object; if not, returns false
+// If ok, returns user object; if no, returns false
 export function validateUser(username, password) {
   const user = getUser(username);
   if (!user) return false;
